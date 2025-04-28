@@ -155,10 +155,6 @@ Got it — you want a **full professional README section** explaining:
 
 ---
 
-# 📄 Here’s the full README section you can paste into your README.md:
-
----
-
 ## 📊 Evaluation of Retrieval Systems
 
 ### 1. Gold Test Set Preparation (`gold_test_set.xlsx`)
