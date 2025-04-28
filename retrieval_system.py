@@ -10,6 +10,7 @@ from typing import List, Tuple
 from sklearn.feature_extraction.text import TfidfVectorizer
 from rank_bm25 import BM25Okapi
 
+
 class RetrievalSystemBuilder:
     def __init__(self):
         self.config = {
