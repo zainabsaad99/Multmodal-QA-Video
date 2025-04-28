@@ -1,0 +1,6 @@
+Retrieval Method,Accuracy (Answerable),Rejection Rate (Unanswerable),Average Latency (s)
+FAISS,0.4,0.0,2.287
+pgvector-IVFFLAT,0.3,0.0,2.423
+pgvector-HNSW,0.3,0.0,2.327
+TF-IDF,0.5,0.0,2.468
+BM25,0.2,0.0,2.098
