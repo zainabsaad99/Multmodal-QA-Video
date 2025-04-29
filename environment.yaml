@@ -1,4 +1,4 @@
-name: QA_RAG
+name: rag-video
 channels:
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge
   - conda-forge
@@ -8,16 +8,14 @@ channels:
   - https://repo.anaconda.com/pkgs/r
   - https://repo.anaconda.com/pkgs/msys2
 dependencies:
-  - _openmp_mutex=4.5=2_gnu
+  - _libavif_api=1.2.1=h57928b3_2
   - aom=3.9.1=he0c23c2_0
-  - brotli-python=1.1.0=py39ha51f57c_2
   - bzip2=1.0.8=h2466b09_7
   - ca-certificates=2025.4.26=h4c7d964_0
   - cairo=1.18.4=h5782bbf_0
-  - cffi=1.17.1=py39ha55e580_0
-  - charset-normalizer=3.4.1=pyhd8ed1ab_0
   - colorama=0.4.6=pyhd8ed1ab_1
   - dav1d=1.2.1=hcfcfb64_0
+  - double-conversion=3.3.1=he0c23c2_0
   - ffmpeg=7.1.1=gpl_hc27df84_704
   - font-ttf-dejavu-sans-mono=2.37=hab24e00_0
   - font-ttf-inconsolata=3.000=h77eed37_0
@@ -26,109 +24,183 @@ dependencies:
   - fontconfig=2.15.0=h765892d_1
   - fonts-conda-ecosystem=1=0
   - fonts-conda-forge=1=0
+  - freeglut=3.2.2=he0c23c2_3
   - freetype=2.13.3=h57928b3_1
   - fribidi=1.0.10=h8d14728_0
   - gdk-pixbuf=2.42.12=hed59a49_0
   - graphite2=1.3.13=h63175ca_1003
-  - h2=4.2.0=pyhd8ed1ab_0
   - harfbuzz=11.1.0=h8796e6f_0
-  - hpack=4.1.0=pyhd8ed1ab_0
-  - hyperframe=6.1.0=pyhd8ed1ab_0
+  - hdf5=1.14.6=nompi_hd5d9e70_101
   - icu=75.1=he0c23c2_0
-  - idna=3.10=pyhd8ed1ab_1
-  - imageio=2.37.0=pyhfb79c49_0
-  - imageio-ffmpeg=0.6.0=pyhd8ed1ab_0
+  - imath=3.1.12=hbb528cf_0
   - intel-openmp=2024.2.1=h57928b3_1083
+  - jasper=4.2.5=h99a1cce_0
+  - khronos-opencl-icd-loader=2024.10.24=h2466b09_1
+  - krb5=1.21.3=hdf4eb48_0
   - lame=3.100=hcfcfb64_1003
-  - lcms2=2.17=hbcf6048_0
   - lerc=4.0.0=h6470a55_1
+  - libabseil=20250127.1=cxx17_h4eb7d71_0
+  - libaec=1.1.3=h63175ca_0
+  - libasprintf=0.22.5=h5728263_3
+  - libavif16=1.2.1=hb57027a_2
   - libblas=3.9.0=31_h641d27c_mkl
   - libcblas=3.9.0=31_h5e41251_mkl
+  - libclang13=20.1.3=default_h6e92b77_0
+  - libcurl=8.13.0=h88aaa65_0
   - libdeflate=1.23=h76ddb4d_0
   - libexpat=2.7.0=he0c23c2_0
   - libffi=3.4.6=h537db12_1
   - libfreetype=2.13.3=h57928b3_1
   - libfreetype6=2.13.3=h0b5ce68_1
-  - libgcc=14.2.0=h1383e82_2
+  - libgettextpo=0.22.5=h5728263_3
   - libglib=2.84.1=h7025463_0
-  - libgomp=14.2.0=h1383e82_2
   - libhwloc=2.11.2=default_ha69328c_1001
   - libiconv=1.18=h135ad9c_1
   - libintl=0.22.5=h5728263_3
   - libjpeg-turbo=3.1.0=h2466b09_0
   - liblapack=3.9.0=31_h1aa476e_mkl
+  - liblapacke=3.9.0=31_h845c4fa_mkl
   - liblzma=5.8.1=h2466b09_0
-  - libogg=1.3.5=h2466b09_0
+  - libogg=1.3.5=h2466b09_1
+  - libopencv=4.11.0=qt6_py39h8854ea1_607
+  - libopenvino=2025.0.0=hb1d9b14_3
+  - libopenvino-auto-batch-plugin=2025.0.0=h04f32e0_3
+  - libopenvino-auto-plugin=2025.0.0=h04f32e0_3
+  - libopenvino-hetero-plugin=2025.0.0=hb61b842_3
+  - libopenvino-intel-cpu-plugin=2025.0.0=hb1d9b14_3
+  - libopenvino-intel-gpu-plugin=2025.0.0=hb1d9b14_3
+  - libopenvino-ir-frontend=2025.0.0=hb61b842_3
+  - libopenvino-onnx-frontend=2025.0.0=hf9c6bd6_3
+  - libopenvino-paddle-frontend=2025.0.0=hf9c6bd6_3
+  - libopenvino-pytorch-frontend=2025.0.0=he0c23c2_3
+  - libopenvino-tensorflow-frontend=2025.0.0=hd51e7bd_3
+  - libopenvino-tensorflow-lite-frontend=2025.0.0=he0c23c2_3
   - libopus=1.5.2=h2466b09_0
-  - libpng=1.6.47=had7236b_0
+  - libpng=1.6.47=h7a4582a_0
+  - libprotobuf=5.29.3=he9d8c4a_1
   - librsvg=2.58.4=h5ce5fed_3
   - libsqlite=3.49.1=h67fdade_2
+  - libssh2=1.11.1=h9aa295b_0
   - libtiff=4.7.0=h797046b_4
   - libusb=1.0.28=h2466b09_0
   - libvorbis=1.3.7=h0e60522_0
   - libwebp-base=1.5.0=h3b0e114_0
   - libwinpthread=12.0.0.r4.gg4f2fc60ca=h57928b3_9
-  - libxcb=1.17.0=h0e4246c_0
   - libxml2=2.13.7=h442d1da_1
   - libzlib=1.3.1=h2466b09_2
   - mkl=2024.2.2=h66d3029_15
-  - moviepy=1.0.3=pyhd8ed1ab_1
   - numpy=2.0.2=py39h60232e0_1
+  - opencl-headers=2024.10.24=he0c23c2_0
+  - opencv=4.11.0=qt6_py39hb5cec6c_607
+  - openexr=3.3.3=h1acc403_0
   - openh264=2.6.0=hb17fa0b_0
-  - openjpeg=2.5.3=h4d64b90_0
   - openssl=3.5.0=ha4e3fda_0
   - pango=1.56.3=h0c53d3b_1
   - pcre2=10.44=h3d7b363_2
   - pip=25.1=pyh8b19718_0
   - pixman=0.44.2=had0cd8c_0
-  - pthread-stubs=0.4=h0e40799_1002
-  - pycparser=2.22=pyh29332c3_1
-  - pysocks=1.7.1=pyh09c184e_7
+  - pugixml=1.15=h372dad0_0
+  - py-opencv=4.11.0=qt6_py39ha1ba0a7_607
   - python=3.9.22=hfdde91d_1_cpython
   - python_abi=3.9=7_cp39
-  - requests=2.32.3=pyhd8ed1ab_1
-  - sdl2=2.32.54=hecf2515_0
-  - sdl3=3.2.10=he0c23c2_0
+  - qt6-main=6.8.3=h72a539a_2
+  - rav1e=0.6.6=h975169c_2
+  - sdl2=2.32.54=he0c23c2_0
+  - sdl3=3.2.10=he0c23c2_1
   - setuptools=79.0.1=pyhff2d567_0
+  - snappy=1.2.1=h500f7fa_1
   - svt-av1=3.0.2=he0c23c2_0
   - tbb=2021.13.0=h62715c5_1
   - tk=8.6.13=h5226925_1
   - tqdm=4.67.1=pyhd8ed1ab_1
-  - tzdata=2025b=h78e105d_0
   - ucrt=10.0.22621.0=h57928b3_1
-  - urllib3=2.4.0=pyhd8ed1ab_0
   - vc=14.3=h2b53caa_26
   - vc14_runtime=14.42.34438=hfd919c2_26
   - vs2015_runtime=14.42.34438=h7142326_26
   - wheel=0.45.1=pyhd8ed1ab_1
-  - win_inet_pton=1.1.0=pyh7428d3b_8
   - x264=1!164.3095=h8ffe710_2
   - x265=3.5=h2d74725_3
-  - xorg-libxau=1.0.12=h0e40799_0
-  - xorg-libxdmcp=1.1.5=h0e40799_0
-  - zstandard=0.23.0=py39ha55e580_1
   - zstd=1.5.7=hbeecb71_2
   - pip:
+      - accelerate==1.6.0
+      - aiohappyeyeballs==2.6.1
+      - aiohttp==3.11.18
+      - aiosignal==1.3.2
+      - altair==5.5.0
+      - async-timeout==5.0.1
+      - attrs==25.3.0
+      - blinker==1.9.0
+      - cachetools==5.5.2
       - certifi==2025.4.26
-      - decorator==4.4.2
+      - charset-normalizer==3.4.1
+      - click==8.1.8
+      - datasets==3.5.1
+      - dill==0.3.8
+      - et-xmlfile==2.0.0
+      - faiss-cpu==1.11.0
       - filelock==3.18.0
-      - fsspec==2025.3.2
+      - frozenlist==1.6.0
+      - fsspec==2025.3.0
+      - gitdb==4.0.12
+      - gitpython==3.1.44
+      - huggingface-hub==0.30.2
+      - idna==3.10
       - jinja2==3.1.6
+      - joblib==1.4.2
+      - jsonschema==4.23.0
+      - jsonschema-specifications==2025.4.1
       - llvmlite==0.43.0
       - markupsafe==3.0.2
       - more-itertools==10.7.0
       - mpmath==1.3.0
+      - multidict==6.4.3
+      - multiprocess==0.70.16
+      - narwhals==1.37.0
       - networkx==3.2.1
       - numba==0.60.0
       - openai-whisper==20240930
-      - opencv-python==4.11.0.86
-      - pillow==10.4.0
-      - proglog==0.1.11
-      - pydub==0.25.1
-      - python-dotenv==1.1.0
+      - openpyxl==3.1.5
+      - packaging==24.2
+      - pandas==2.2.3
+      - pillow==11.2.1
+      - propcache==0.3.1
+      - protobuf==5.29.4
+      - psutil==7.0.0
+      - psycopg2==2.9.10
+      - psycopg2-binary==2.9.10
+      - pyarrow==20.0.0
+      - pydeck==0.9.1
+      - python-dateutil==2.9.0.post0
+      - pytz==2025.2
+      - pyyaml==6.0.2
+      - rank-bm25==0.2.2
+      - referencing==0.36.2
       - regex==2024.11.6
-      - sympy==1.13.3
+      - requests==2.32.3
+      - rpds-py==0.24.0
+      - safetensors==0.5.3
+      - scikit-learn==1.6.1
+      - scipy==1.13.1
+      - sentence-transformers==4.1.0
+      - six==1.17.0
+      - smmap==5.0.2
+      - streamlit==1.44.1
+      - sympy==1.14.0
+      - tenacity==9.1.2
+      - threadpoolctl==3.6.0
       - tiktoken==0.9.0
-      - torch==2.7.0
+      - tokenizers==0.21.1
+      - toml==0.10.2
+      - torch==2.7.0+cu118
+      - torchaudio==2.7.0+cu118
+      - torchvision==0.22.0+cu118
+      - tornado==6.4.2
+      - transformers==4.51.3
       - typing-extensions==4.13.2
-prefix: C:\Users\zaina\anaconda3\envs\QA_RAG
+      - tzdata==2025.2
+      - urllib3==2.4.0
+      - watchdog==6.0.0
+      - xxhash==3.5.0
+      - yarl==1.20.0
+      - yt-dlp==2025.3.31
+prefix: C:\Users\zaina\anaconda3\envs\rag-video

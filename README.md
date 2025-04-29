@@ -41,7 +41,7 @@ cd Multmodal-QA-Video.git
 
 ```bash
 conda env create -f environment.yml
-conda activate QA_RAG
+conda activate rag-video
 ```
 
 > ✅ This will install **all required packages** using Conda and Pip.
