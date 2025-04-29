@@ -31,8 +31,8 @@ This system builds a **Multimodal Retrieval-Augmented Generation (RAG)** pipelin
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/zainabsaad99/video-qa-multimodal-rag.git
-cd video-qa-multimodal-rag
+git clone https://github.com/zainabsaad99/Multmodal-QA-Video.git
+cd Multmodal-QA-Video.git
 ```
 
 ---
